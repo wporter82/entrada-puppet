@@ -1,6 +1,6 @@
-#Entrada VM via puppet
+# Entrada VM via puppet
 
-##Setup
+## Setup
 You should have the latest version of the following apps installed.
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -16,6 +16,7 @@ vagrant up
 You will need to set up Entrada on your system by opening a browser to:
 
 http://{your_ip_address}:8080
+
 *NOTE: If port 8080 isn't available, vagrant will warn you and choose a
 different one. The output of 'vagrant up' will indicate this.*
 
