@@ -10,6 +10,7 @@ Clone the repository to a location on your local machine and start the vm:
 
 ```
 git clone https://github.com/wporter82/entrada-puppet.git
+cd entrada-puppet
 vagrant up
 ```
 
