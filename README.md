@@ -25,22 +25,25 @@ different one. The output of 'vagrant up' will indicate this.*
 
 Most of the text boxes on the setup screen will be filled in for you
 
-* The port number needs to be added to the address
+### Fill out site info
+* The port number needs to be added to the address, leave all other boxes with
+their defaults
 
 ![Step 2](/images/step2.jpg)
 
 
-* The MySql password is 'pass123'
+### Set up database
+* The MySql password is 'pass123', leave all other boxes with their defaults
 
 ![Step 3](/images/step3.jpg)
 
 
-* Fill out your admin account info
+### Fill out your admin account info
 
 ![Step 4](/images/step4.jpg)
 
 
-* Add configured rules to .htaccess file
+### Add configured rules to .htaccess file
 
 ![Step 5](/images/step5.jpg)
 
@@ -56,4 +59,5 @@ touch .htaccess
 nano .htaccess
 ```
 Paste the contents into the editor window
+
 CTL+X to Exit, making sure to choose 'Y' to save
