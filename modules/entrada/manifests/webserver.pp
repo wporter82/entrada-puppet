@@ -6,6 +6,13 @@ class entrada::webserver($environment, $destination) {
     require => Package['apache2'],
   }
 
+  file { 'enable error reporting':
+    path => '/etc/php5/apache2/conf.d/20-dev.ini',
+    ensure => file,
+    content => template("entrada/20-dev.ini.erb"),
+    require => Package['apache2'],
+  }
+
   file { $destination:
     ensure => 'directory',
     owner => 'vagrant',
