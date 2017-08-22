@@ -13,9 +13,11 @@ class entrada::code($destination) {
     require => File[$folder],
   }
 
-  exec { 'set permissions':
-    command => "chmod -R 777 ${destination}/www-root/core",
-    path => '/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/puppetlabs/bin',
+  file { "${destination}/www-root/core":
+    ensure => 'directory',
+    mode => '777',
+    recurse => true,
+    show_diff => false,
     require => Vcsrepo[$destination],
   }
 
