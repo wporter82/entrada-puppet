@@ -22,13 +22,23 @@ class entrada::code($destination) {
   }
 
   exec { 'install composer':
-    command => 'curl -sS https://getcomposer.org/installer | php;
-                php composer.phar update',
+    command => 'curl -sS https://getcomposer.org/installer | php',
     cwd => $destination,
+    creates => "${destination}/composer.phar",
     path => '/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/puppetlabs/bin',
     environment => ['HOME=/home/vagrant'],
     user => 'vagrant',
     timeout => '0',
     require => Vcsrepo[$destination],
+  }
+
+  exec { 'install dependancies':
+    command => 'php composer.phar update',
+    cwd => $destination,
+    path => '/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/puppetlabs/bin',
+    environment => ['HOME=/home/vagrant'],
+    user => 'vagrant',
+    timeout => '0',
+    require => Exec['install composer'],
   }
 }
